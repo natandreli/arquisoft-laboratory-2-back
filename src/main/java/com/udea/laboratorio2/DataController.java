@@ -11,6 +11,8 @@ import java.util.Locale;
 @RestController
 public class DataController {
 
+    static final String LENGUAGE = "en-US";
+
     @GetMapping("/")
     public String healthCheck(){
         return "APLICACIÓN FUNCIONANDO, ¡OK!";
@@ -24,7 +26,7 @@ public class DataController {
     @GetMapping("nations")
     public JsonNode getRandomNations(){
         var objectMapper = new ObjectMapper();
-        var faker = new Faker(new Locale("en-US"));
+        var faker = new Faker(new Locale(LENGUAGE));
         var nations = objectMapper.createArrayNode();
         for(var i=0; i<10; i++){
             var nation = faker.nation();
@@ -40,7 +42,7 @@ public class DataController {
     @GetMapping("currencies")
     public JsonNode getRandomCurrencies(){
         var objectMapper = new ObjectMapper();
-        var faker = new Faker(new Locale("en-US"));
+        var faker = new Faker(new Locale(LENGUAGE));
         var currencies = objectMapper.createArrayNode();
         for(var i=0; i<20; i++){
             var currency = faker.currency();
@@ -54,7 +56,7 @@ public class DataController {
     @GetMapping("airplanes")
     public JsonNode getRandomAirplanes(){
         var objectMapper = new ObjectMapper();
-        var faker = new Faker(new Locale("en-US"));
+        var faker = new Faker(new Locale(LENGUAGE));
         var airplanes = objectMapper.createArrayNode();
         for(var i=0; i<20; i++){
             var aviation = faker.aviation();
