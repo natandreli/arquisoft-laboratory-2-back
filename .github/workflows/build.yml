@@ -107,6 +107,7 @@ jobs:
           #From this path
           path: target/laboratorio2-0.0.1-SNAPSHOT.jar
   deploy:
+    needs: build
     name: Deploys Docker Image in AWS ECR
     runs-on: ubuntu-latest
 
