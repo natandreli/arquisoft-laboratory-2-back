@@ -126,6 +126,12 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      - name: Download JAR
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+          path: target/
+            
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
