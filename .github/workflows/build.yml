@@ -134,7 +134,7 @@ jobs:
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: arquisoft_laboratory_2_back_task_definition
+          task-definition: arquisoft_laboratory_2_back_task_definition.json
           service: arquisoft_laboratory_2_back_service
           cluster: arquisoft_laboratory_2_back_cluster
           wait-for-service-stability: true
